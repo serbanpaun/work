@@ -1,39 +1,16 @@
-def sum(a,b):
-    return a + b
-def multiply(a,b):
-    return a * b
-def divide(a,b):
-    if b == 0:
-        return "Error: Division by zero"
-    return a / b
-def sub(a,b):
-    return a - b
-
-def main():
-    print("Select operation:")
-    print("1. Sum")
-    print("2. Subtract")
-    print("3. Multiply")
-    print("4. Divide")
-
-    choice = input("Enter choice(1/2/3/4): ")
-
-    if choice in ['1', '2', '3', '4']:
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
-
-        if choice == '1':
-            print(f"{num1} + {num2} = {sum(num1, num2)}")
-
-        elif choice == '2':
-            print(f"{num1} - {num2} = {sub(num1, num2)}")
-
-        elif choice == '3':
-            print(f"{num1} * {num2} = {multiply(num1, num2)}")
-
-        elif choice == '4':
-            result = divide(num1, num2)
-            print(f"{num1} / {num2} = {result}")
-
-    else:
-        print("Invalid input")
+#write a function to calculate prime numbers betweeen two given numbers
+def prime_numbers(start, end):
+    primes = []
+    for num in range(start, end + 1):
+        if num > 1:
+            for i in range(2, int(num**0.5) + 1):
+                if (num % i) == 0:
+                    break
+            else:
+                primes.append(num)
+    return primes
+#write code to input the two numbers and call the function
+start = int(input("Enter the start number: "))
+end = int(input("Enter the end number: "))
+print(f"Prime numbers between {start} and {end} are: {prime_numbers(start, end)}")
+#test the function
