@@ -1,0 +1,9 @@
+# This file must be placed in /etc/systemd/system/
+[Unit]
+Description=DNS updater for %I
+
+[Service]
+Type=oneshot
+User=root
+
+ExecStart=/storage/scripts/update_dns.sh %I
