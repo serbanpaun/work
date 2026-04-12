@@ -1,4 +1,10 @@
 # Dynamic DNS update script
+This is a pair of scripts for updating and maintaining Dynamic DNS records, using BIND9 and MariaDB/MySQL database. It is meant to run in a trusted environment, but it can also be deployed as a service provider script, if modified accordingly (see [Client files](#client-files) section).
+
+DNS record is created as `exampledynhost.domain.tld 60 A IP.ADD.RE.SS`. TTL is set to `60` seconds, but can be configured.
+
+
+
 ### File structure
 
 ```
